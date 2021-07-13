@@ -3,77 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
   <title>Zay Shop</title>
   <!-- Favicon Link -->
   <link rel="shortcut icon" href="/zay/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/zay/img/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/zay/img/favicon.ico">
-
   <!-- Font Awesome Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
   <!-- Reset CSS Link -->
   <link rel="stylesheet" href="/zay/css/reset.css">
-  <!-- Light Slide Plugin Link -->
-  <link rel="stylesheet" href="/zay/lib/css/lightslider.css">
-  <!-- Main CSS Link -->
+  <!-- Light Slider Plugin Link -->
+  <link rel="stylesheet" href="/zay/lib/lightslider.css">
+  <!-- Main Style CSS Link -->
   <link rel="stylesheet" href="/zay/css/style.css">
-  <!-- Media CSS Link -->
+  <!-- Media Style CSS Link -->
   <link rel="stylesheet" href="/zay/css/media.css">
 </head>
 <body>
-  <div class="wrap">
-    <!-- Top Bar Section -->
-    <div class="top_bar">
-      <div class="center">
-        <div class="contact_info">
-          <a href="#">
-            <i class="fa fa-envelope"></i>
-            <em>info@naver.com</em>
-          </a>
-          <a href="#">
-            <i class="fa fa-phone"></i>
-            <em>+82 10 1234 5678</em>
-          </a>
-        </div>
-        <div class="sns_info">
-          <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- End of Top Bar Section -->
 
-    <!-- Header Section -->
-    <header>
-      <div class="center">
-        <h2 class="logo"><a href="#">Zay</a></h2>
-        <div class="menu_items">
-        <ul class="gnb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-        <div class="login_info">
-          <a href="#">로그인</a>
-          <a href="/zay/pages/join.php">회원가입</a>
-          <a href="#"><img src="/zay/img/default-user.png" alt=""></a>
-        </div>
-        </div>
-       
-        <div class="mobile_menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
-    <!-- End of Header Section -->
+  <div class="wrap">
+
+
+    <?php
+    include $_SERVER["DOCUMENT_ROOT"].'/zay/include/header.php'
+    ?>
+
+
 
     <!-- Slider Landing Section -->
     <section class="slider">
@@ -133,28 +89,28 @@
           <!-- Loop of Cate Item -->
           <div class="cate_item">
             <div class="cate_img">
-            <img src="/zay/img/category_img_01.jpg" alt="">
-            </div>
+              <img src="/zay/img/category_img_01.jpg" alt="">
+            </div>       
             <h3>Watches</h3>
-            <a href="#">Go Shop</a>
+            <a href="#" class="main_btn">Go Shop</a>
           </div>
           <!-- End of Loop of Cate Item -->
           <!-- Loop of Cate Item -->
           <div class="cate_item">
             <div class="cate_img">
-            <img src="/zay/img/category_img_02.jpg" alt="">
-            </div>
+              <img src="/zay/img/category_img_02.jpg" alt="">
+            </div>       
             <h3>Watches</h3>
-            <a href="#">Go Shop</a>
+            <a href="#" class="main_btn">Go Shop</a>
           </div>
           <!-- End of Loop of Cate Item -->
           <!-- Loop of Cate Item -->
           <div class="cate_item">
             <div class="cate_img">
-            <img src="/zay/img/category_img_03.jpg" alt="">
-            </div>
+              <img src="/zay/img/category_img_03.jpg" alt="">
+            </div>       
             <h3>Watches</h3>
-            <a href="#">Go Shop</a>
+            <a href="#" class="main_btn">Go Shop</a>
           </div>
           <!-- End of Loop of Cate Item -->
         </div>
@@ -163,9 +119,10 @@
     <!-- End of Categories Section -->
   </div>
 
-  <!-- jquer Framework Load -->
+  <!-- jQuery Framework Load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/zay/lib/js/lightslider.js"></script>
+  <script src="/zay/lib/lightslider.js"></script>
   <script src="/zay/js/jq.main.js"></script>
+  <script src="/zay/js/slide.js"></script>
 </body>
 </html>
