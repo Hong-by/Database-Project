@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="/zay/lib/css/lightslider.css">
   <!-- Main CSS Link -->
   <link rel="stylesheet" href="/zay/css/style.css">
+  <!-- Media CSS Link -->
+  <link rel="stylesheet" href="/zay/css/media.css">
 </head>
 <body>
   <div class="wrap">
@@ -50,6 +52,7 @@
     <header>
       <div class="center">
         <h2 class="logo"><a href="#">Zay</a></h2>
+        <div class="menu_items">
         <ul class="gnb">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -58,8 +61,15 @@
         </ul>
         <div class="login_info">
           <a href="#">로그인</a>
-          <a href="#">회원가입</a>
+          <a href="/zay/pages/join.php">회원가입</a>
           <a href="#"><img src="/zay/img/default-user.png" alt=""></a>
+        </div>
+        </div>
+       
+        <div class="mobile_menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </header>
@@ -111,6 +121,46 @@
       <!-- End of Loop Slider Box -->
     </section>
     <!-- End of Slider Landing Section -->
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="center">
+        <div class="tit_box">
+          <h2>Categories of The Month</h2>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br> mollit anim id est laborum.</p>
+        </div>
+        <div class="cate_box">
+          <!-- Loop of Cate Item -->
+          <div class="cate_item">
+            <div class="cate_img">
+            <img src="/zay/img/category_img_01.jpg" alt="">
+            </div>
+            <h3>Watches</h3>
+            <a href="#">Go Shop</a>
+          </div>
+          <!-- End of Loop of Cate Item -->
+          <!-- Loop of Cate Item -->
+          <div class="cate_item">
+            <div class="cate_img">
+            <img src="/zay/img/category_img_02.jpg" alt="">
+            </div>
+            <h3>Watches</h3>
+            <a href="#">Go Shop</a>
+          </div>
+          <!-- End of Loop of Cate Item -->
+          <!-- Loop of Cate Item -->
+          <div class="cate_item">
+            <div class="cate_img">
+            <img src="/zay/img/category_img_03.jpg" alt="">
+            </div>
+            <h3>Watches</h3>
+            <a href="#">Go Shop</a>
+          </div>
+          <!-- End of Loop of Cate Item -->
+        </div>
+      </div>
+    </section>
+    <!-- End of Categories Section -->
   </div>
 
   <!-- jquer Framework Load -->
