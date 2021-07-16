@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,7 @@
   <link rel="icon" href="/zay/img/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/zay/img/favicon.ico">
   <!-- Font Awesome Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
   <!-- Reset CSS Link -->
   <link rel="stylesheet" href="/zay/css/reset.css">
   <!-- Light Slider Plugin Link -->
@@ -20,6 +21,7 @@
   <!-- Media Style CSS Link -->
   <link rel="stylesheet" href="/zay/css/media.css">
 </head>
+
 <body>
 
   <div class="wrap">
@@ -40,7 +42,9 @@
           <div class="slider_txt">
             <h2>Zay eCommerce</h2>
             <h4>Tiny and Perfect eCommerce Template</h4>
-            <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).<br>This template is 100% free provided by TemplateMo website.<br>Image credits go to Freepik Stories, Unsplash and Icons 8.</p>
+            <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).<br>This template
+              is 100% free provided by TemplateMo website.<br>Image credits go to Freepik Stories, Unsplash and Icons 8.
+            </p>
           </div>
           <div class="slider_img">
             <img src="/zay/img/banner_img_01.jpg" alt="">
@@ -54,7 +58,9 @@
           <div class="slider_txt">
             <h2>Zay eCommerce</h2>
             <h4>Tiny and Perfect eCommerce Template</h4>
-            <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).<br>This template is 100% free provided by TemplateMo website.<br>Image credits go to Freepik Stories, Unsplash and Icons 8.</p>
+            <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).<br>This template
+              is 100% free provided by TemplateMo website.<br>Image credits go to Freepik Stories, Unsplash and Icons 8.
+            </p>
           </div>
           <div class="slider_img">
             <img src="/zay/img/banner_img_02.jpg" alt="">
@@ -68,7 +74,9 @@
           <div class="slider_txt">
             <h2>Zay eCommerce</h2>
             <h4>Tiny and Perfect eCommerce Template</h4>
-            <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).<br>This template is 100% free provided by TemplateMo website.<br>Image credits go to Freepik Stories, Unsplash and Icons 8.</p>
+            <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).<br>This template
+              is 100% free provided by TemplateMo website.<br>Image credits go to Freepik Stories, Unsplash and Icons 8.
+            </p>
           </div>
           <div class="slider_img">
             <img src="/zay/img/banner_img_03.jpg" alt="">
@@ -84,7 +92,8 @@
       <div class="center">
         <div class="tit_box">
           <h2>Categories of The Month</h2>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br> mollit anim id est laborum.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br> mollit anim id est
+            laborum.</p>
         </div>
         <div class="cate_box">
           <?php
@@ -106,7 +115,7 @@
           <div class="cate_item">
             <div class="cate_img">
               <img src="/zay/data/product_imgs/<?=$cate_img?>" alt="">
-            </div>       
+            </div>
             <h3><?=$cate_tit?></h3>
             <a href="#" class="main_btn">Go Shop</a>
           </div>
@@ -119,55 +128,58 @@
     </section>
     <!-- End of Categories Section -->
     <section class="featured">
-          <div class="center">
-            <div class="tit_box">
-              <h2>Featured Product</h2>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br> mollit anim id est laborum.</p>
-            </div>
-            <div class="featured_box">
-              <?php
-                $sql1 = "SELECT * FROM zay_pro ORDER BY ZAY_pro_idx DESC";
-                $pro_result = mysqli_query($dbConn, $sql1);
+      <div class="center">
+        <div class="tit_box">
+          <h2>Featured Product</h2>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br> mollit anim id est
+            laborum.</p>
+        </div>
+        <div class="featured_box">
+          <?php
+            $sql1 = "SELECT * FROM zay_pro ORDER BY ZAY_pro_idx DESC";
+            $pro_result = mysqli_query($dbConn, $sql1);
 
-                while($pro_row = mysqli_fetch_array($pro_result)){
-                  $pro_row_idx = $pro_row['ZAY_pro_idx'];
-                  $pro_row_img = $pro_row['ZAY_pro_img_01'];
-                  $pro_row_tit = $pro_row['ZAY_pro_name'];
-                  $pro_row_desc = $pro_row['ZAY_pro_desc'];
-                  $pro_row_pri = $pro_row['ZAY_pro_pri'];
-              ?>
-              <!-- Featured Loop Item -->
-              <div class="featured_item">
-                <div class="item_frame">
-                  <div class="featured_img">
-                    <img src="/zay/data/product_imgs/<?=$pro_row_img?>" alt="">
-                  </div>
-                  <div class="like_unlike">
-                    <div class="like_icons">
-                    <span>좋아요 | <b>20</b></span>
-                    <span>별로에요 | <b>11</b></span>
-                    </div>
-                    <p><i class="fa fa-krw"></i> <?=$pro_row_pri?></p>
-                  </div>
-                  <div class="featured_txt">
-                    <h3><?=$pro_row_tit?></h3>
-                    <p class="desc"><?=$pro_row_desc?></p>
-                  </div>
-                  <div class="reviews">
-                    <em>Comments(12)</em>
-                  </div>
+            while($pro_row = mysqli_fetch_array($pro_result)){
+              $pro_row_idx = $pro_row['ZAY_pro_idx'];
+              $pro_row_img = $pro_row['ZAY_pro_img_01'];
+              $pro_row_tit = $pro_row['ZAY_pro_name'];
+              $pro_row_desc = $pro_row['ZAY_pro_desc'];
+              $pro_row_pri = $pro_row['ZAY_pro_pri'];
+          ?>
+          <!-- Featured Loop Item -->
+          <div class="featured_item">
+            <div class="item_frame">
+              <a href="/zay/pages/details/pro_detail_form.php?pro_idx=<?=$pro_row_idx?>">
+                <div class="featured_img">
+                  <img src="/zay/data/product_imgs/<?=$pro_row_img?>" alt="">
                 </div>
+              </a>
+              <div class="like_unlike">
+                <div class="like_icons">
+                  <span>좋아요 | <b>20</b></span>
+                  <span>별로에요 | <b>11</b></span>
+                </div>
+                <p><i class="fa fa-krw"></i> <?=$pro_row_pri?></p>
               </div>
-              <!-- End of Featured Loop Item -->
-              <?php
-                };
-              ?>
-            </div>
-            <div class="load_more">
-              <button type="button">더보기</button>
+              <div class="featured_txt">
+                <h3><?=$pro_row_tit?></h3>
+                <p class="desc"><?=$pro_row_desc?></p>
+              </div>
+              <div class="reviews">
+                <em>Comments(12)</em>
+              </div>
             </div>
           </div>
-        </section>
+          <!-- End of Featured Loop Item -->
+          <?php
+            };
+          ?>
+        </div>
+        <div class="load_more">
+          <button type="button">더보기</button>
+        </div>
+      </div>
+    </section>
 
     <?php
       include $_SERVER["DOCUMENT_ROOT"].'/zay/include/footer.php';
@@ -180,4 +192,5 @@
   <script src="/zay/js/jq.main.js"></script>
   <script src="/zay/js/slide.js"></script>
 </body>
+
 </html>
