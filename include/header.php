@@ -1,6 +1,12 @@
 <?php
 
 session_start();
+if(isset($_SESSION['useridx'])){
+  $useridx = $_SESSION['useridx'];
+} else {
+  $useridx = "";
+}
+
 if(isset($_SESSION['userid'])){
   $userid = $_SESSION['userid'];
 } else {
@@ -14,6 +20,7 @@ if(isset($_SESSION['userprofile'])){
 }
 
 // echo $userid, $userprofile;
+//echo $useridx, $userid;
 
 ?>
 
@@ -74,7 +81,7 @@ if(isset($_SESSION['userprofile'])){
         ?>
 
       </div>
-    </div>  
+    </div>
     <div class="mobile_menu">
       <span></span>
       <span></span>

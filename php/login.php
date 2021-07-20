@@ -48,6 +48,9 @@ if(!$id_match){
     session_start();
     $_SESSION['userid'] = $login_row['ZAY_mem_id'];
     $_SESSION['userprofile'] = $login_row['ZAY_mem_pf'];
+    $_SESSION['useridx'] = $login_row['ZAY_mem_idx'];
+
+    var_dump($_SESSION['useridx']);
 
     echo "
       <script>
