@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
-  <title>Zay Shop || Join</title>
+  <title>Zay Shop || community</title>
   <!-- Favicon Link -->
   <link rel="shortcut icon" href="/zay/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/zay/img/favicon.ico" type="image/x-icon">
@@ -26,24 +26,38 @@
     include $_SERVER["DOCUMENT_ROOT"].'/zay/include/header.php'
     ?>
 
-    <section class="join">
+    <section class="community">
       <div class="center">
-        <div class="form_box">
+        <div class="tit_box">
+          <h2>Commnuity Board</h2>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br> mollit anim id
+            est laborum.</p>
+        </div>
+        <div class="comm_table">
+          <ul class="comm_row">
+            <li class="comm_tit">
+              <span>번호</span>
+              <span>아이디</span>
+              <span>제목</span>
+              <span>등록일</span>
+              <span>조회수</span>
+            </li>
+            <li class="comm_con">
+              <span>3</span>
+              <span>hby033</span>
+              <span>사이트 오픈을 축하합니다.</span>
+              <span>2021-07-21</span>
+              <span>101</span>
+            </li>
 
-          <form action="/zay/php/login.php" name="login_form" method="post" class="login_form">
-            <p>
-              <label>아이디</label><input type="text" name="login_id" placeholder="아이디">
-            </p>
-            <!-- 아이디 중복체크 -->
-            <p>
-              <label>비밀번호</label><input type="password" name="login_pass" autocomplete="off" placeholder="비밀번호">
-            </p>
-
-            <div class="submit_info">
-              <button type="button" id="login_btn">로그인</button>
-              <span>아직 회원이 아니면 <a href="/zay/pages/join/join_form.php">click</a></span>
-            </div>
-          </form>
+            <li class="comm_con">
+              <span>4</span>
+              <span>h222033</span>
+              <span>오마야 뭡니다.</span>
+              <span>2021-07-21</span>
+              <span>51</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -59,25 +73,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/js/jq.main.js"></script>
 
-  <script>
-  const loginBtn = document.querySelector("#login_btn");
-
-  loginBtn.addEventListener('click', function() {
-    if (!document.login_form.login_id.value) {
-      alert('아이디를 입력해 주세요');
-      document.login_form.login_id.focus();
-      return;
-    }
-
-    if (!document.login_form.login_pass.value) {
-      alert('비밀번호를 입력해 주세요');
-      document.login_form.login_pass.focus();
-      return;
-    }
-
-    document.login_form.submit();
-  });
-  </script>
 </body>
 
 </html>

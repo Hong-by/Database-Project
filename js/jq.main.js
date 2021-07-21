@@ -1,16 +1,16 @@
-$(function(){
-  
+$(function () {
+
   //header stick to top and change style when scrolling down
-  const headerStick = function(){
+  const headerStick = function () {
     const hdTop = $("header").offset().top;
 
-    $(window).scroll(function(){
+    $(window).scroll(function () {
       const scroll = $(window).scrollTop();
-      if(scroll >= hdTop){
-        $("header").css({position:"fixed", top:0, width:"100%"});
+      if (scroll >= hdTop) {
+        $("header").css({ position: "fixed", top: 0, width: "100%" });
         $("header").addClass("stick");
       } else {
-        $("header").css({position:"relative"});
+        $("header").css({ position: "relative" });
         $("header").removeClass("stick");
       }
     });
@@ -19,10 +19,10 @@ $(function(){
   headerStick();
 
   // navigation slide down and up when mobile menu click
-  const barsClick = function(){
-    $(".mobile_menu").click(function(){
+  const barsClick = function () {
+    $(".mobile_menu").click(function () {
       $(this).toggleClass("on");
-      if($(this).hasClass("on")){
+      if ($(this).hasClass("on")) {
         $(".menu_items").slideDown(250);
       } else {
         $(".menu_items").slideUp(250);
@@ -32,9 +32,9 @@ $(function(){
   barsClick();
 
   // index page description text cut
-  const cuttingText = function(){
+  const cuttingText = function () {
     // console.log($(".featured_item").lenght);
-    for(let i = 0; i < $(".featured_item").length; i++){
+    for (let i = 0; i < $(".featured_item").length; i++) {
       const textLength = $(".featured_item").eq(i).find("p.desc").text();
       // console.log(textLength);
 
@@ -44,13 +44,13 @@ $(function(){
   cuttingText();
 
   // index page items load more
-  const loadMore = function(){
+  const loadMore = function () {
     $(".featured_item").hide();
     $(".featured_item").slice(0, 3).show();
 
-    $(".load_more button").click(function(){
+    $(".load_more button").click(function () {
       $(".featured_item:hidden").slice(0, 3).show();
-      if($(".featured_item:hidden").length == 0){
+      if ($(".featured_item:hidden").length == 0) {
         $(".load_more").html(`<a href="#">전체보기</a>`);
       }
     });
@@ -58,11 +58,11 @@ $(function(){
   loadMore();
 
   // featured item images height fit to responsive width
-  const imgHeightFit = function(){
+  const imgHeightFit = function () {
     const featuredImgWidth = $(".featured_img").outerWidth();
     $(".featured_img").outerHeight(featuredImgWidth);
 
-    $(window).resize(function(){
+    $(window).resize(function () {
       const featuredImgWidth = $(".featured_img").outerWidth();
       $(".featured_img").outerHeight(featuredImgWidth);
     });
@@ -70,21 +70,38 @@ $(function(){
   imgHeightFit();
 
   // detail Tab click image show
-  const deailTabs = function(){
+  const deailTabs = function () {
     $(".detail_tab_btns span").click(function () {
-      const index = $(this).index();     
+      const index = $(this).index();
       $(".detail_img>img").hide();
       $(".detail_img>img").eq(index).show();
-  
-      
+
+
     });
-  
+
     $(".detail_tab_btns span").eq(0).trigger("click");
-  
+
   }
   deailTabs();
 
-  
+  //디테일 페이지 이미지 높이 맞춤
+  function detailFit() {
+
+    const imgHeight = $('.detail_img_item').outerHeight();
+    const btnsHeight = $('.detail_tab_btns').outerHeight();
+
+    $('.detail_img').height(imgHeight + btnsHeight);
+  }
+
+  $(window).resize(function () {
+    setTimeout(function () { //리사이즈, 스크롤 이벤트 시 쓰로틀링
+      detailFit();
+    }, 150);
+  });
+
+  detailFit();
+
+
 
 
 });

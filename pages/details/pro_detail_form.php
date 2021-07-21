@@ -73,7 +73,7 @@
     $unlike_row = mysqli_fetch_array($unlike_result);
     $total_unlike = $unlike_row['cntUnlikes'];
 
-    echo $total_unlike;
+    // echo $total_unlike;
     
     ?>
 
@@ -83,7 +83,7 @@
       <div class="center">
         <div class="detail_contents">
           <div class="detail_img">
-            <img src="/zay/data/product_imgs/<?=$detail_img_1?>" alt="">
+            <img src="/zay/data/product_imgs/<?=$detail_img_1?>" alt="" class="detail_img_item">
             <img src="/zay/data/product_imgs/<?=$detail_img_2?>" alt="">
             <div class="detail_tab_btns">
               <span><img src="/zay/data/product_imgs/<?=$detail_img_1?>" alt=""></span>
@@ -97,13 +97,18 @@
                 <p><span><i class="fa fa-krw"></i> <?=$detail_pri?></span></p>
                 <div class="detail_like">
                   <div class="like_unlike">
+
+                    <?php if(!$userid){ ?>
+                    <span onclick="plzLogin()">좋아요 | <b><?=$total_like?></b></span>
+                    <span onclick="plzLogin()">별로에요 | <b><?=$total_unlike?></b></span>
+                    <?php } else { ?>
                     <span id="like_<?=$detail_idx?>" class="like"
                       style="<?php if($like_unlike_type == 1){ echo "background: #59ab6e; color: #fff;"; } ?>">좋아요 |
                       <b id="likes_<?=$detail_idx?>"><?=$total_like?></b></span>
                     <span id="unlike_<?=$detail_idx?>" class="unlike"
                       style="<?php if($like_unlike_type == 0){ echo "background: lightcoral; color: #fff;"; } ?>">별로에요
                       | <b id="unlikes_<?=$detail_idx?>"><?=$total_unlike?></b></span>
-
+                    <?php } ?>
                   </div>
                   <p class="gray">Brand : <?=$detail_bran?></p>
                   <div class="detail_desc"></div>
@@ -118,7 +123,7 @@
 
               <div class="size_quan">
                 <div class="size">
-                  <p>Size :
+                  <p>Size
                     <span>S</span>
                     <span>M</span>
                     <span>L</span>
