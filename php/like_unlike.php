@@ -44,6 +44,10 @@
   $fetch_likes = mysqli_fetch_array($result1);
   $total_likes = $fetch_likes['totalLikes'];
 
+  $total_sql = "UPDATE zay_pro SET ZAY_pro_like=$total_likes WHERE ZAY_pro_idx=$post_id";
+
+  mysqli_query($dbConn, $total_sql);
+
   // echo $total_likes
 
 

@@ -1,5 +1,6 @@
 <?php
 
+  $pro_like = 0;
   $pro_cate = $_POST['pro_select'];
   $pro_name = addslashes($_POST['pro_insert_name']);
   $pro_pri = $_POST['pro_insert_pri'];
@@ -45,6 +46,7 @@
 
   include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
   $sql = "INSERT INTO zay_pro(
+    ZAY_pro_like,
     ZAY_pro_cate,
     ZAY_pro_name,
     ZAY_pro_pri,
@@ -55,6 +57,7 @@
     ZAY_pro_img_02,
     ZAY_pro_reg
   ) VALUES (
+    '{$pro_like}',
     '{$pro_cate}',
     '{$pro_name}',
     '{$pro_pri}',
@@ -77,5 +80,3 @@
 
 
 ?>
-
-
