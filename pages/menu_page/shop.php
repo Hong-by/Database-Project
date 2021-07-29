@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
-  <title>Zay Shop || Join</title>
+  <title>Zay Shop || Products</title>
   <!-- Favicon Link -->
   <link rel="shortcut icon" href="/zay/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/zay/img/favicon.ico" type="image/x-icon">
@@ -44,15 +44,18 @@
           <div class="filters">
             <div class="filter_tabs">
               <select onchange="location.href=this.value">
+                <option selected disabled value="" id='select'>검색조건</option>
                 <option value="?key=new">신상품</option>
                 <option value="?key=like">좋아요</option>
                 <option value="?key=price">금액순</option>
               </select>
-              <div class="search">
-                <input type="text" style="border:1px solid">
-                <i class="fa fa-search"></i>
-              </div>
             </div>
+            <form action="/zay/pages/menu_page/shop_search_result.php" name="pro_search_form">
+              <div class="search">
+                <input type="text" placeholder="상품명 검색" name="pro_search" required>
+                <button type="submit" id="search_btn"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -86,6 +89,9 @@
   const btns = document.querySelectorAll('.stor .shop_btns a');
   // console.log(btns);
   const btnsArr = ['all', 'watches', 'shoes', 'accessories'];
+  const filterEng = ['new', 'like', 'price'];
+  const filterKor = ['신상품', '좋아요', '금액순'];
+  const filterSelect = document.querySelector('#select')
 
   // console.log(btnsArr.length);
 
@@ -96,10 +102,26 @@
     }
   }
 
+  for (let i = 0; i < filterEng.length; i++) {
+    if (pathName.includes(filterEng[i])) {
+      filterSelect.innerText = filterKor[i];
+    }
+
+  }
+
   function plzLogin() {
     alert('로그인 후 이용해 주세요.');
     return false;
   }
+
+  // document.querySelector('#search_btn').onclick = function() {
+  //   if (!document.pro_search_form.pro_search.value) {
+  //     alert('상품명을 입력해 주세요.');
+  //     document.pro_search_form.pro_search.focus();
+  //     return;
+  //   }
+  //   document.pro_search_form.submit();
+  // }
   </script>
 
 </body>

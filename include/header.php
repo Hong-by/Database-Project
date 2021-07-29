@@ -79,7 +79,10 @@ if(isset($_SESSION['userprofile'])){
         <?php
         }
         ?>
-
+        <a href="/zay/pages/menu_page/cart_list.php" class="cart_btn">
+          <i class="fa fa-shopping-cart"></i>
+          <b>(2)</b>
+        </a>
       </div>
     </div>
     <div class="mobile_menu">

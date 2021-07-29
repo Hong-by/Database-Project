@@ -8,7 +8,7 @@ ol, ul{list-style:none;}
 input, button, textarea{outline:0; border-radius:0; border: 0; padding: 10px; color: #212529;}
 input::placeholder{color: #ccc;}
 textarea{resize:none;}
-img{display:block;}
+img{display:block; object-fit: cover;}
 em{font-style: normal;}
 b{font-weight: normal;}
 
