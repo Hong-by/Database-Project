@@ -30,16 +30,19 @@ while($pro_row = mysqli_fetch_array($pro_result)){
   //좋아요 싫어요 기능 구현
   $like_unlike_type = -1;
 
-  $status_query = "SELECT COUNT(*) AS cntStatus, ZAY_like_unlike_type FROM zay_like_unlike WHERE 	ZAY_like_unlike_userid='{$useridx}' AND ZAY_like_unlike_postid='{$pro_row_idx}'";
+// $status_query = "SELECT COUNT(*) AS cntStatus FROM zay_like_unlike WHERE 	ZAY_like_unlike_userid='{$useridx}' AND ZAY_like_unlike_postid='{$pro_row_idx}'";
+$status_query = "SELECT * FROM zay_like_unlike WHERE ZAY_like_unlike_userid='{$useridx}' AND ZAY_like_unlike_postid='{$pro_row_idx}'";
 
-  $status_result = mysqli_query($dbConn, $status_query);
-  $status_row = mysqli_fetch_array($status_result);
-  $count_status = $status_row['cntStatus'];
-  
-  // echo $count_status;
-  if($count_status > 0){
-    $like_unlike_type=$status_row['ZAY_like_unlike_type'];
-  }
+$status_result = mysqli_query($dbConn, $status_query);
+$status_num = mysqli_num_rows($status_result);
+$status_row = mysqli_fetch_array($status_result);
+// $count_status = $status_row['cntStatus'];
+//echo $status_row;
+
+//---------------
+if($status_num > 0){
+  $like_unlike_type=$status_row['ZAY_like_unlike_type'];
+}
 
   $like_query = "SELECT COUNT(*) cntLikes FROM zay_like_unlike WHERE ZAY_like_unlike_type=1 AND ZAY_like_unlike_postid='{$pro_row_idx}'";
   $like_result = mysqli_query($dbConn, $like_query);

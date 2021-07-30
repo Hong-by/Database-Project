@@ -66,7 +66,7 @@
       <script>
         alert('회원가입이 완료되었습니다.');
         location.href='/zay/index.php';
-      </>
+      </script>
     ";
   };
   //echo $mem_id, $mem_pass, $mem_pf, $mem_name, $mem_email;

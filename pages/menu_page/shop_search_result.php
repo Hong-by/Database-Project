@@ -66,13 +66,17 @@
             <span class="search_txt">
               <h2><?=$result_name?></h2>
               <p><?=$result_desc?></p>
+              <h3><i class="fa fa-krw"></i> <?=$result_pri?></h3>
             </span>
             <span class="search_pri">
               <h3><i class="fa fa-krw"></i> <?=$result_pri?></h3>
             </span>
             <span class="search_btns">
-              <button>BUY NOW</button>
-              <button>ADD TO CART</button>
+              <form action="/zay/php/cart.php" method="post">
+                <button name="remove_cart">REMOVE ITEM</button>
+                <input type="hidden" name="cart_remove" value="<?=$cart_name?>">
+                <button>BUY NOW</button>
+              </form>
             </span>
           </div>
           <!--End of loop search itme -->

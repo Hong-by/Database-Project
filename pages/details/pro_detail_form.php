@@ -120,45 +120,47 @@
                 </div>
                 <!-- End of detail_like -->
               </div>
+              <form action="/zay/php/cart.php" method="post">
+                <div class="size_quan">
+                  <div class="size">
+                    <p>Size
+                      <span>S</span>
+                      <span>M</span>
+                      <span>L</span>
+                      <span>XL</span>
+                    </p>
+                    <P>Quantity
+                      <span id="itme_quan_reduce">-</span>
+                      <input name="cart_quan" value="1"></input>
+                      <span id="itme_quan_increce">+</span>
+                    </P>
+                  </div>
 
-              <div class="size_quan">
-                <div class="size">
-                  <p>Size
-                    <span>S</span>
-                    <span>M</span>
-                    <span>L</span>
-                    <span>XL</span>
-                  </p>
-                  <P>Quantity
-                    <span>-</span>
-                    <b>1</b>
-                    <span>+</span>
-                  </P>
-                </div>
-                <form action="/zay/php/cart.php" method="post">
                   <div class="detail_btns">
                     <button type="button">BUY NOW</button>
                     <button type="submit" name="add_to_cart">ADD TO CART</button>
                   </div>
+                  <input type="hidden" name="cart_idx" value="<?=$detail_idx?>">
                   <input type="hidden" name="cart_img" value="<?=$detail_img_1?>">
                   <input type="hidden" name="cart_name" value="<?=$detail_tit?>">
                   <input type="hidden" name="cart_desc" value="<?=$detail_desc?>">
                   <input type="hidden" name="cart_pri" value="<?=$detail_pri?>">
-                </form>
-              </div>
-              <!-- End of size quantity -->
-
+                  <input type="hidden" name="cart_pri" value="<?=$detail_pri?>">
+              </form>
             </div>
+            <!-- End of size quantity -->
+
           </div>
         </div>
-        <!-- End of detail-Contents -->
       </div>
-    </section>
-    <section class="comments">
-      <div class="center">
-        <div class="comments_tit">
-          <span>상품평</span> |
-          <?php
+      <!-- End of detail-Contents -->
+  </div>
+  </section>
+  <section class="comments">
+    <div class="center">
+      <div class="comments_tit">
+        <span>상품평</span> |
+        <?php
             include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
             $sql_rev = "SELECT * FROM zay_review WHERE ZAY_pro_rev_con_idx=$pro_idx ORDER BY ZAY_pro_rev_idx DESC";
 
@@ -166,23 +168,23 @@
             $rev_total = mysqli_num_rows($rev_result);
 
           ?>
-          <span><em><?=$rev_total?></em> Coments</span>
-        </div>
-        <div class="comment_insert">
-          <form action="/zay/php/comment_insert.php?pro_idx=<?=$pro_idx?>&pro_writer=<?=$userid?>" method="post"
-            name="comment_form">
-            <textarea type="text" placeholder="상품평을 입력해 주세요." name="comment_txt"></textarea>
-            <?php if(!$userid){ ?>
-            <button type="button" onclick="plzLogin()">입력</button>
-            <?php } else { ?>
-            <button type="button" onclick="insertTxt()">입력</button>
-            <?php } ?>
-          </form>
-        </div>
+        <span><em><?=$rev_total?></em> Coments</span>
+      </div>
+      <div class="comment_insert">
+        <form action="/zay/php/comment_insert.php?pro_idx=<?=$pro_idx?>&pro_writer=<?=$userid?>" method="post"
+          name="comment_form">
+          <textarea type="text" placeholder="상품평을 입력해 주세요." name="comment_txt"></textarea>
+          <?php if(!$userid){ ?>
+          <button type="button" onclick="plzLogin()">입력</button>
+          <?php } else { ?>
+          <button type="button" onclick="insertTxt()">입력</button>
+          <?php } ?>
+        </form>
+      </div>
 
-        <div class="comment_contents">
+      <div class="comment_contents">
 
-          <?php            
+        <?php            
             while($rev_row = mysqli_fetch_array($rev_result)){
               $rev_idx = $rev_row['ZAY_pro_rev_idx'];
               $rev_writer = $rev_row['ZAY_pro_rev_id'];
@@ -190,46 +192,46 @@
               $rev_txt = $rev_row['ZAY_pro_rev_txt'];
               $rev_pro_idx = $rev_row['ZAY_pro_rev_con_idx'];
           ?>
-          <!-- Loop Comments -->
-          <div class="loop_contents">
-            <div class="comments_tit">
-              <span><?=$rev_writer?></span> |
-              <span><?=$rev_reg?></span>
-            </div>
-            <form action="/zay/php/comment_update.php?pro_idx=<?=$rev_idx?>&pro_writer=<?=$rev_writer?>" method="post">
-              <div class="comments_text">
+        <!-- Loop Comments -->
+        <div class="loop_contents">
+          <div class="comments_tit">
+            <span><?=$rev_writer?></span> |
+            <span><?=$rev_reg?></span>
+          </div>
+          <form action="/zay/php/comment_update.php?pro_idx=<?=$rev_idx?>&pro_writer=<?=$rev_writer?>" method="post">
+            <div class="comments_text">
 
 
-                <em class="rev_txt"><?=$rev_txt?></em>
-                <textarea class="rev_update_txt" name="rev_update_txt"><?=$rev_txt?></textarea>
+              <em class="rev_txt"><?=$rev_txt?></em>
+              <textarea class="rev_update_txt" name="rev_update_txt"><?=$rev_txt?></textarea>
 
 
-                <?php if(!$userid){ ?>
-                <input type="hidden">
-                <?php } else {  if($userid != $rev_writer){ ?>
-                <input type="hidden">
-                <?php } else { ?>
-                <span class="comment_btns">
-                  <button type="submit" class="rev_send">보내기</button>
-                  <button type="button" class="rev_update">수정</button>
-                  <button type="button" class="rev_delete" value="<?=$rev_idx?>">삭제</button>
-                  <input type="hidden" value="<?=$rev_writer?>">
-                </span>
-                <?php
+              <?php if(!$userid){ ?>
+              <input type="hidden">
+              <?php } else {  if($userid != $rev_writer){ ?>
+              <input type="hidden">
+              <?php } else { ?>
+              <span class="comment_btns">
+                <button type="submit" class="rev_send">보내기</button>
+                <button type="button" class="rev_update">수정</button>
+                <button type="button" class="rev_delete" value="<?=$rev_idx?>">삭제</button>
+                <input type="hidden" value="<?=$rev_writer?>">
+              </span>
+              <?php
                   }
                 };
               ?>
-              </div>
-            </form>
-          </div>
-          <!-- End of Loop Comments -->
-          <?php } ?>
+            </div>
+          </form>
         </div>
+        <!-- End of Loop Comments -->
+        <?php } ?>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <?php
+  <?php
       include $_SERVER["DOCUMENT_ROOT"].'/zay/include/footer.php';
     ?>
   </div>
