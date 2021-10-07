@@ -46,3 +46,9 @@ php를 활용해 구축된 전자상거래 홈페이지 입니다.  Database를 
 - sql data Structure : [https://docs.google.com/spreadsheets/d/1vi38XBYAtltPcOQIyMoquw2v4QhyJU5NftpKK7wQcqg/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1vi38XBYAtltPcOQIyMoquw2v4QhyJU5NftpKK7wQcqg/edit?usp=sharing)
 
 ![Structure](./img/database1.png)
+
+## Browser Support
+
+![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)</br>Chrome | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)</br>Firefox | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)</br>IE/edge | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png)</br>opera | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)</br>safari
+--- | --- | --- | --- | --- |
+Latest ✔ | Latest ✔ | <span style="color:red">No Support</span></br>/ 10+ ✔ | Latest ✔ | 6.1+ ✔ |
